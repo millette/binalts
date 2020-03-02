@@ -1,0 +1,16 @@
+{
+  "name": "binalts",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Robin Millette <robin@millette.info> (http://robin.millette.info/)",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "got": "^10.6.0",
+    "level": "^6.0.0"
+  }
+}
