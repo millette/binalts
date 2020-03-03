@@ -4,7 +4,7 @@ const fastify = require("fastify")({ logger: true })
 
 fastify.register(require("fastify-compress"))
 fastify.register(require("fastify-leveldb"), {
-  name: "tickers-copy-v6",
+  name: "tickers-copy-v7",
   options: {
     valueEncoding: "json",
   },
@@ -15,23 +15,23 @@ fastify.register(require("fastify-static"), {
 })
 
 const symbols = [
-  // "FUNBTC",
-  // "CVCBTC",
-  // "DASHBTC",
-  // "DNTBTC",
-  // "LTCBTC",
-  // "ADABTC",
+  "FUNBTC",
+  "CVCBTC",
+  "DASHBTC",
+  "DNTBTC",
+  "LTCBTC",
+  "ADABTC",
   "ETHBTC",
-  // "XMRBTC",
-  // "DCRBTC",
-  // "SALTBTC",
-  // "REPBTC",
+  "XMRBTC",
+  "DCRBTC",
+  "SALTBTC",
+  "REPBTC",
 ]
 
 fastify.get("/stocks.csv", (request, reply) => {
   reply.type("text/plain")
   const ddd = ["date,symbol,price"]
-  fastify.level.createReadStream()
+  fastify.level.createReadStream(request.query)
     .on("data", ({ key, value }) => {
       symbols.forEach((symbol) => {
         const price = value[symbol]
