@@ -15,13 +15,13 @@ fastify.register(require("fastify-static"), {
 })
 
 const symbols = [
-  "FUNBTC",
-  "CVCBTC",
+  // "FUNBTC",
+  // "CVCBTC",
   // "DASHBTC",
-  "DNTBTC",
+  // "DNTBTC",
   // "LTCBTC",
-  "ADABTC",
-  // "ETHBTC",
+  // "ADABTC",
+  "ETHBTC",
   // "XMRBTC",
   // "DCRBTC",
   // "SALTBTC",
@@ -35,7 +35,7 @@ fastify.get("/stocks.csv", (request, reply) => {
     .on("data", ({ key, value }) => {
       symbols.forEach((symbol) => {
         const price = value[symbol]
-        if (price) ddd.push([key, symbol, price].join())
+        if (key && price) ddd.push([key, symbol, price].join())
       })
     })
     .on("end", () => {
