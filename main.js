@@ -20,27 +20,28 @@ const it = async ({ view }) => {
       o[k] = y[i]
     })
     // j'ajoute du bruit pour mieux illustrer les changements
-    o.price = parseFloat(o.price) + Math.random() / 3000
+    // o.price = parseFloat(o.price) / 0.02
     return o
   })
 
   clearInterval(ii)
   $waiting.innerText = ""
 
+  const step = 500
   // const after = [ ...roro ]
   const half = async (aa) => {
     // const mid = Math.floor(aa.length * 0.6)
     // console.log("mid", aa)
-    if (aa >= (roro.length - 120)) return
+    if (aa >= (roro.length - step)) return
     // const aa2 = aa.slice(0, mid)
     // console.log(aa2[0])
     // console.log(aa2[aa2.length - 1])
     // await view.remove("tickers", aa2).runAsync()
     // view.insert("tickers", roro.slice(aa, aa + 10)).run()
-    await view.data("tickers", roro.slice(aa, aa + 50)).runAsync()
+    await view.data("tickers", roro.slice(aa, aa + step)).runAsync()
     // await view.insert("tickers", roro.slice(aa, aa + 10)).runAsync()
     // await view.remove("tickers", roro.slice(aa, aa + 10)).runAsync()
-    setTimeout(half, 16, aa + 1)
+    setTimeout(half, 16, aa + 10)
   }
   half(0)
 
@@ -48,6 +49,6 @@ const it = async ({ view }) => {
   // return view.insert("tickers", roro.slice()).runAsync()
 }
 
-vegaEmbed('#vis', "specs-lite.json", { width: 1700, height: 900 })
+vegaEmbed('#vis', "specs-lite.json", { width: 1600, height: 900 })
   .then(it)
   .catch(console.error)
