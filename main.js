@@ -19,6 +19,8 @@ const it = async ({ view }) => {
     keys.forEach((k, i) => {
       o[k] = y[i]
     })
+    // j'ajoute du bruit pour mieux illustrer les changements
+    o.price = parseFloat(o.price) + Math.random() / 3000
     return o
   })
 
@@ -29,21 +31,21 @@ const it = async ({ view }) => {
   const half = async (aa) => {
     // const mid = Math.floor(aa.length * 0.6)
     // console.log("mid", aa)
-    if (aa > roro.length - 100) return
+    if (aa >= (roro.length - 120)) return
     // const aa2 = aa.slice(0, mid)
     // console.log(aa2[0])
     // console.log(aa2[aa2.length - 1])
     // await view.remove("tickers", aa2).runAsync()
     // view.insert("tickers", roro.slice(aa, aa + 10)).run()
-    await view.data("tickers", roro.slice(aa, aa + 30)).runAsync()
+    await view.data("tickers", roro.slice(aa, aa + 50)).runAsync()
     // await view.insert("tickers", roro.slice(aa, aa + 10)).runAsync()
     // await view.remove("tickers", roro.slice(aa, aa + 10)).runAsync()
-    setTimeout(half, 33, aa + 15)
+    setTimeout(half, 16, aa + 1)
   }
   half(0)
 
   // 0, 10
-  return view.insert("tickers", roro.slice()).runAsync()
+  // return view.insert("tickers", roro.slice()).runAsync()
 }
 
 vegaEmbed('#vis', "specs-lite.json", { width: 1700, height: 900 })

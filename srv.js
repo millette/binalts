@@ -4,7 +4,7 @@ const fastify = require("fastify")({ logger: true })
 
 fastify.register(require("fastify-compress"))
 fastify.register(require("fastify-leveldb"), {
-  name: "tickers-copy-v5",
+  name: "tickers-copy-v6",
   options: {
     valueEncoding: "json",
   },
