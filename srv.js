@@ -17,15 +17,15 @@ fastify.register(require("fastify-static"), {
 const symbols = [
   "FUNBTC",
   "CVCBTC",
-  "DASHBTC",
+  // "DASHBTC",
   "DNTBTC",
-  "LTCBTC",
+  // "LTCBTC",
   "ADABTC",
-  "ETHBTC",
-  "XMRBTC",
-  "DCRBTC",
-  "SALTBTC",
-  "REPBTC",
+  // "ETHBTC",
+  // "XMRBTC",
+  // "DCRBTC",
+  // "SALTBTC",
+  // "REPBTC",
 ]
 
 fastify.get("/stocks.csv", (request, reply) => {
