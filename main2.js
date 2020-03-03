@@ -15,8 +15,6 @@ const fetchPeriod = async (view, from, to) => {
     const y = x.split(",")
     const o = {}
     keys.forEach((k, i) => { o[k] = y[i] })
-    // j'ajoute du bruit pour mieux illustrer les changements
-    // o.price = parseFloat(o.price) + Math.random() / 3000
     return o
   })
   console.log("roro.length", roro.length)
