@@ -16,6 +16,7 @@ const db = level("tickers", { valueEncoding: "json" })
 const doit = async () => {
   const { headers, body } = await got(u, { headers: { "user-agent": `${name} - v${version}` }, responseType: "json" } )
 
+  // FIXME: use actual timestamp as db key (not iso string).
   const date = new Date(headers.date).toISOString()
   // console.log(JSON.stringify({ date, tickers: body }, null, 2))
 
