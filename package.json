@@ -10,7 +10,14 @@
   "author": "Robin Millette <robin@millette.info> (http://robin.millette.info/)",
   "license": "AGPL-3.0",
   "dependencies": {
+    "fastify": "^2.12.1",
+    "fastify-compress": "^2.0.1",
+    "fastify-leveldb": "^2.1.0",
+    "fastify-static": "^2.6.0",
     "got": "^10.6.0",
-    "level": "^6.0.0"
+    "level": "^6.0.0",
+    "vega": "^5.9.2",
+    "vega-embed": "^6.3.2",
+    "vega-lite": "^4.4.0"
   }
 }
