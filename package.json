@@ -15,7 +15,7 @@
     "fastify-leveldb": "^2.1.0",
     "fastify-static": "^2.6.0",
     "got": "^10.6.0",
-    "level": "^6.0.0",
+    "level": "^6.0.1",
     "vega": "^5.9.2",
     "vega-embed": "^6.3.2",
     "vega-lite": "^4.5.1"
